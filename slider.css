@@ -1,4 +1,13 @@
-.jjuniv-slider > * {
+html,
+body,
+.jjuniv-slider {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.jjuniv-slider > *:not([class="page-indicator"]) {
   position: absolute;
   top: 0;
   left: 0;
@@ -15,4 +24,51 @@
 
 .jjuniv-slider > .current ~ * {
   transform: translateX(100%);
+}
+
+.jjuniv-slider .page-indicator {
+  position: absolute;
+  width: 100%;
+  bottom: 1rem;
+  text-align: right;
+  transform: none;
+  z-index: 100;
+}
+
+.jjuniv-slider .dot-indicator {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 4px;
+  border-radius: 8px;
+  background: white;
+  margin-left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.jjuniv-slider .dot {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background: black;
+  opacity: 0.2;
+  transition: opacity 0.5s;
+}
+
+.jjuniv-slider .dot.current {
+  opacity: 1;
+}
+
+.jjuniv-slider .number-indicator {
+  display: inline-block;
+  margin-right: 1rem;
+  font-weight: 700;
+  padding: 4px;
+  padding-bottom: 2px;
+  border-radius: 4px;
+  background: white;
 }
